@@ -28,39 +28,44 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/calcButton7"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:padding="8dp"
+                android:text="@string/_7" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/calcButton8"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:padding="8dp"
+                android:text="@string/_8" />
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/calcButton9"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:padding="8dp"
+                android:text="@string/_9" />
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/calcButtonSqrRoot"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:padding="8dp"
+                android:text="@string/SqrRoot" />
 
             <Button
-                android:id="@+id/button5"
+                android:id="@+id/calcButtonClear"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:padding="8dp"
+                android:text="@string/c" />
         </LinearLayout>
 
         <LinearLayout
@@ -70,39 +75,44 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button6"
+                android:id="@+id/calcButton4"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:padding="8dp"
+                android:text="@string/_4" />
 
             <Button
-                android:id="@+id/button7"
+                android:id="@+id/calcButton5"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:padding="8dp"
+                android:text="5" />
 
             <Button
-                android:id="@+id/button8"
+                android:id="@+id/calcButton6"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:padding="8dp"
+                android:text="@string/_6" />
 
             <Button
-                android:id="@+id/button9"
+                android:id="@+id/calcButtonDivision"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:padding="8dp"
+                android:text="@string/Division" />
 
             <Button
-                android:id="@+id/button10"
+                android:id="@+id/calcButtonPercentage"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:padding="8dp"
+                android:text="@string/Percentage" />
         </LinearLayout>
 
         <LinearLayout
@@ -112,39 +122,39 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button11"
+                android:id="@+id/calcButton1"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="@string/_1" />
 
             <Button
-                android:id="@+id/button12"
+                android:id="@+id/calcButton2"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="@string/_2" />
 
             <Button
-                android:id="@+id/button13"
+                android:id="@+id/calcButton3"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="@string/_3" />
 
             <Button
-                android:id="@+id/button14"
+                android:id="@+id/calcButtonMultiply"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="@string/Multiply" />
 
             <Button
-                android:id="@+id/button15"
+                android:id="@+id/calcButtonSubtraction"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="@string/Subtraction" />
         </LinearLayout>
 
         <LinearLayout
@@ -154,39 +164,39 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button16"
+                android:id="@+id/calcButtonSignSwap"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="@string/SignSwap" />
 
             <Button
-                android:id="@+id/button17"
+                android:id="@+id/calcButton0"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="@string/_0" />
 
             <Button
-                android:id="@+id/button18"
+                android:id="@+id/calcButtonDecimal"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="@string/Decimal" />
 
             <Button
-                android:id="@+id/button19"
+                android:id="@+id/calcButtonAddition"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="@string/Addition" />
 
             <Button
-                android:id="@+id/button20"
+                android:id="@+id/calcButtonEquals"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Button" />
+                android:text="@string/Equals" />
         </LinearLayout>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

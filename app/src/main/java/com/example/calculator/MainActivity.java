@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private BigDecimal viewing;
     private BigDecimal saved;
     private String currentOperator;
-    private final BigDecimal percentMultiplier = new BigDecimal(.01);
+    private BigDecimal percentMultiplier;
     private final int numerator = 1;
     private final int denominator = 2;
 
@@ -129,7 +129,9 @@ public class MainActivity extends AppCompatActivity {
                 addToViewing(".");
                 break;
             case R.id.percentage:
+
                     viewing = viewing.multiply(percentMultiplier);
+
                 break;
             case R.id.equals:
                 equals(currentOperator);
@@ -162,6 +164,7 @@ public class MainActivity extends AppCompatActivity {
     public void init(){
         viewing = new BigDecimal(0);
         saved = new BigDecimal(0);
+        percentMultiplier = new BigDecimal(".01");
         currentOperator = "";
         updateViewing(viewing);
 

@@ -113,9 +113,6 @@ public class MainActivity extends AppCompatActivity {
             case R.id.subtraction:
                 setCurrentOperand("SUBTRACTION");
                 break;
-            case R.id.multiplication:
-                setCurrentOperand("MULTIPLICATION");
-                break;
             case R.id.division:
                 setCurrentOperand("DIVISION");
                 break;
@@ -128,10 +125,11 @@ public class MainActivity extends AppCompatActivity {
             case R.id.decimal:
                 addToViewing(".");
                 break;
+            case R.id.multiplication:
+                setCurrentOperand("MULTIPLICATION");
+                break;
             case R.id.percentage:
-
-                    viewing = viewing.multiply(percentMultiplier);
-
+                viewing = viewing.multiply(percentMultiplier);
                 break;
             case R.id.equals:
                 equals(currentOperator);
@@ -139,6 +137,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.sqrRoot:
                 if(viewing.doubleValue() > 0)
                     viewing = new BigDecimal(Double.toString(Math.sqrt(viewing.doubleValue())));
+                    viewing = viewing.stripTrailingZeros();
                 break;
         }
         updateViewing(viewing);

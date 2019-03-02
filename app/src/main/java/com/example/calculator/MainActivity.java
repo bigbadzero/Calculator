@@ -19,8 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private BigDecimal saved;
     private String currentOperator;
     private BigDecimal percentMultiplier;
-    private final int numerator = 1;
-    private final int denominator = 2;
+    boolean currentDouble, newDouble;
 
 
 
@@ -123,7 +122,10 @@ public class MainActivity extends AppCompatActivity {
                 init();
                 break;
             case R.id.decimal:
-                addToViewing(".");
+                if(!isWholeNumber(viewing) && !currentDouble){
+                    currentDouble = true;
+                    newDouble = true;
+                }
                 break;
             case R.id.multiplication:
                 setCurrentOperand("MULTIPLICATION");
@@ -145,28 +147,41 @@ public class MainActivity extends AppCompatActivity {
 
     public void updateViewing(BigDecimal n) {
         TextView c = findViewById(R.id.Output);
+        if(newDouble){
+            c.setText(viewing.toPlainString() + ".");
+        }
         c.setText(viewing.toPlainString());
-
     }
-
     public void addToViewing(String newNum){
         String newValue = viewing.toPlainString() + newNum;
+        if(newDouble){
+            viewing = new BigDecimal(viewing.toPlainString() + "." + newNum);
+            newDouble = false;
+            return;
+        }
+        else
         viewing = new BigDecimal(newValue);
     }
     public void setCurrentOperand(String d){
         if(currentOperator ==""){
             saved = viewing;
             viewing = new BigDecimal(0);
+            currentDouble = false;
         }
         currentOperator = d;
     }
     public void init(){
-        viewing = new BigDecimal(0);
-        saved = new BigDecimal(0);
+        viewing = new BigDecimal("0");
+        saved = new BigDecimal("0");
         percentMultiplier = new BigDecimal(".01");
         currentOperator = "";
+        currentDouble = false;
+        newDouble = false;
         updateViewing(viewing);
 
+    }
+    private boolean isWholeNumber(BigDecimal n){
+        return !(n.doubleValue() % 1 == 0);
     }
 
     public void equals(String currentOperator){
@@ -183,23 +198,6 @@ public class MainActivity extends AppCompatActivity {
             case "DIVISION":
                 viewing = saved.divide(viewing);
                 break;
-            //case "SQRROOT":
-                //viewing = viewing.pow(numerator/denominator);
-                //break;
-            //case "SIGNSWAP":
-                //viewing = viewing.negate();
-                //break;
-            //case "PERCENTAGE":
-                //if(saved.equals(0)){
-                    //viewing = viewing.multiply(percentageMultiplier);
-               // }
-               // else{
-                   // viewing = saved.multiply(viewing.multiply(percentageMultiplier));
-              //  }
-               // break;
-
-
-
         }
 
     }

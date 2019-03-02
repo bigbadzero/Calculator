@@ -120,28 +120,31 @@ public class MainActivity extends AppCompatActivity {
                 setCurrentOperand("DIVISION");
                 break;
             case R.id.signSwap:
-                setCurrentOperand("SIGNSWAP");
+                viewing = viewing.negate();
                 break;
             case R.id.clear:
-                addToViewing("0");
+                init();
                 break;
             case R.id.decimal:
                 addToViewing(".");
                 break;
             case R.id.percentage:
-                setCurrentOperand("PERCENTAGE");
+                if(saved.equals(0)){
+                    viewing = viewing.multiply(percentageMultiplier);
+                }
+                else{
+                    viewing = saved.multiply(viewing.multiply(percentageMultiplier));
+                }
                 break;
             case R.id.equals:
                 equals(currentOperator);
                 break;
             case R.id.sqrRoot:
-                setCurrentOperand("SQRROOT");
-                equals(currentOperator);
+                if(viewing.doubleValue() > 0)
+                    viewing = new BigDecimal(Double.toString(Math.sqrt(viewing.doubleValue())));
                 break;
         }
         updateViewing(viewing);
-
-
     }
 
     public void updateViewing(BigDecimal n) {
@@ -162,11 +165,8 @@ public class MainActivity extends AppCompatActivity {
         currentOperator = d;
     }
     public void init(){
-        //sets defaults
-        // big decimals set to 0
-        //current operator is empty string
-        BigDecimal viewing = new BigDecimal(0);
-        BigDecimal saved = new BigDecimal(0);
+        viewing = new BigDecimal(0);
+        saved = new BigDecimal(0);
         currentOperator = "";
         updateViewing(viewing);
 
@@ -186,15 +186,20 @@ public class MainActivity extends AppCompatActivity {
             case "DIVISION":
                 viewing = saved.divide(viewing);
                 break;
-            case "SQRROOT":
-                viewing = saved.pow(numerator/denominator);
-                break;
-            case "SIGNSWAP":
-                viewing = viewing.negate();
-                break;
-            case "PERCENTAGE":
-                viewing = saved.multiply(saved.multiply(percentageMultiplier));
-                break;
+            //case "SQRROOT":
+                //viewing = viewing.pow(numerator/denominator);
+                //break;
+            //case "SIGNSWAP":
+                //viewing = viewing.negate();
+                //break;
+            //case "PERCENTAGE":
+                //if(saved.equals(0)){
+                    //viewing = viewing.multiply(percentageMultiplier);
+               // }
+               // else{
+                   // viewing = saved.multiply(viewing.multiply(percentageMultiplier));
+              //  }
+               // break;
 
 
 

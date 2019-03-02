@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private BigDecimal viewing;
     private BigDecimal saved;
     private String currentOperator;
-    private final BigDecimal percentageMultiplier = new BigDecimal(.01);
+    private final BigDecimal percentMultiplier = new BigDecimal(.01);
     private final int numerator = 1;
     private final int denominator = 2;
 
@@ -129,12 +129,7 @@ public class MainActivity extends AppCompatActivity {
                 addToViewing(".");
                 break;
             case R.id.percentage:
-                if(saved.equals(0)){
-                    viewing = viewing.multiply(percentageMultiplier);
-                }
-                else{
-                    viewing = saved.multiply(viewing.multiply(percentageMultiplier));
-                }
+                    viewing = viewing.multiply(percentMultiplier);
                 break;
             case R.id.equals:
                 equals(currentOperator);
